@@ -1,0 +1,892 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+  --bg-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bd-font-sans-serif:'Open Sans', sans-serif;
+  --bd-light: #F4F6F8;
+  --bd-dark: #3A3F44;
+  --primary: #eb1c24;;
+  --secondary: #FDBE33;
+  --light: #F4F6F8;
+  --dark: #040F28;
+  --gray:#1a1919;
+}
+*,*::before,*::after{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+    margin: 0;
+    font-size: clamp(1rem,2.2vh,1.5rem);
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: var(--bd-font-sans-serif);
+    background-color: whitesmoke;
+}
+img{
+  display: block;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+header {
+  height: 50px;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  padding: 2rem; 
+  background-color: var(--bd-dark);
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index: 1002; 
+}
+.header-homepage-button{
+  text-decoration: none;
+}
+.header-logo{
+  display:flex;
+  flex-wrap:nowrap;
+  white-space: nowrap;
+  gap:0.5rem;
+  align-items:center;
+   
+}
+.header-homepage-button .header-logo h1{
+  font-family: "Roboto", sans-serif;
+  font-weight:700;
+  font-size: 1.4rem;
+  color:#fff;
+}
+.header-homepage-button.header-logo img{
+  width:15%;
+  height:auto;
+}
+nav ul{
+  display:flex;
+  gap:2rem;
+  list-style: none;
+}
+nav ul li a{
+  text-decoration:none;
+  color:#fff;
+  font-size: 1rem;
+}
+nav ul li a:hover{
+  color:var(--primary);
+  transition: background 0.2s;
+}
+nav ul li a:active{
+  color:var(--primary);
+}
+.call-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.call-details p{
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1001;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+/* Hide the checkbox */
+#toggle-menu {
+  display: none;
+}
+main{
+  margin-top:50px;
+}
+.hero{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../images/construction3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height:70vh;
+}
+ .hero-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 170px;
+  color:var(--bd-light);
+ }
+ .hero-wrapper h1{
+  font-size: 5rem;
+  font-weight: 900;
+  animation-delay: 0.4s;
+ }
+ .hero-wrapper img{
+  animation-delay: 0.4s;
+   width: 10%;
+  height: auto;
+  
+ }
+ .hero-wrapper p{
+  animation-delay: 0.4s;
+  font-size:2rem;
+ }
+ Add animation to inner elements with staggered delays */
+.hero-wrapper img {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 3s ease-out forwards;
+  animation-delay: 0.2s;
+ 
+}
+
+.hero-wrapper h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 3s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-wrapper p {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 3s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+.about{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.about h2{
+  font-size: 3rem;
+}
+.about p{
+  font-weight: 700;
+  color: var(--gray);
+}
+.team details:hover{
+ cursor: pointer;
+}
+.team h2{
+  text-align: center;
+  font-size:3rem ;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.team .ceo-bio{
+  margin-right: 15rem;
+  margin-top: 1rem;
+  color: var(--gray);
+}
+.team .ceo-bio p{
+  margin-top: 1.5rem;
+  line-height: 1.7;
+}
+.team .ceo-bio blockquote{
+  margin-top: 1.5rem;
+}
+.team .ceo{
+  width: 100%;
+  padding-left: 10rem;
+}
+.team .ceo img{
+  width: 80%;
+  height: auto;
+}
+.team figure{
+  width:28%;
+}
+.team figure img{
+  width: 100%;
+  height: auto;
+}
+.team .second-board-member{
+  height: 69%;
+}
+.team .orange-text{
+  color:var(--primary);
+  font-weight: normal;
+}
+.team details{
+  margin-left: 10rem;
+}
+.team-boardmembers{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10rem;
+}
+.team-boardmembers figure{
+  width:55%;
+}
+.team-boardmembers figure img{
+  width:100%;
+  height: auto;
+}
+.team-boardmembers figure figcaption{
+  font-weight: 600;
+}
+.team-boardmembers .board-member-adjust{
+  height:69%;
+}
+.team-advisers{
+  margin-top: 10rem;
+}
+.team-advisers h2{
+  text-align: center;
+  font-size:3rem ;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.team-advisers-container{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 10rem;
+}
+.team-advisers-container figure{
+  width:55%;
+}
+.team-advisers-container figure img{
+  width: 100%;
+  height: auto;
+}
+.team-advisers-container figcaption{
+  font-weight: 600;
+}
+.team-advisers-container p{
+  color:var(--gray);
+  font-weight: normal;
+}
+.team-advisers-container .orange-text{
+  color: var(--primary);
+  font-weight: normal;
+}
+
+
+
+.straight-line{
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgb(233, 226, 226);
+  margin-bottom: 10rem;
+  margin-top: 10rem;
+}
+.icons{
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.about-us h4{
+  margin-bottom: 1.5rem;
+}
+.about-us p{
+  font-size: 1rem;
+  font-size: 1.2rem;
+  color: var(--gray);
+}
+.nav h4{
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--gray);
+}
+.nav ul {
+  list-style-type: none;
+}
+.nav ul li{
+  margin-top: 1rem;
+}
+.nav ul li a{
+  text-decoration: none;
+  color:var(--gray);
+  
+}
+.nav ul li a:hover{
+  color:var(--primary);
+}
+
+.pre-footer{
+  display:flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  margin-bottom: 7rem;
+}
+.footer-red-text{
+  color:var(--primary)
+}
+
+
+.copyright{
+  margin: 0 auto;
+}
+
+
+footer{
+  background-color: var(--bd-dark);
+  height:50px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--bd-light);
+  margin-top: 3rem;
+}
+
+
+
+@media (max-width: 480px) {
+ header{
+    padding:2.5rem;
+    width:100%;
+    justify-content: space-between;
+  }
+  .header-logo {
+  z-index: 1003;
+}
+ nav {
+    position: fixed;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: var(--bd-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 3rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+nav ul li{
+  margin-top: 0.7rem;
+}
+  #toggle-menu:checked ~ nav {
+    transform: translateY(0);
+  }
+.call-details{
+  display: none;
+}
+  .hamburger {
+    display: flex;
+    
+  }
+
+  .hero {
+    height: 50vh;
+  }
+.hero-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+  color:var(--bd-light);
+ }
+ .hero-wrapper h1{
+  font-size: 1.5rem;
+ }
+ .hero-wrapper p{
+  font-size:0.9rem;
+ }
+ .hero-wrapper img{
+  width: 20%;
+ }
+  .about h2,
+  .team h2,
+  .team-advisers h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    padding: 0 1rem;
+  }
+
+  .team .ceo,
+  .team figure,
+  .team .ceo-bio,
+  .team details,
+  .team-boardmembers,
+  .team-boardmembers figure,
+  .team-advisers-container,
+  .team-advisers-container figure {
+    width: 100%;
+    margin: 0 auto;
+  }
+.team .ceo{
+  margin-left: -5rem;
+  width: 100%;
+}
+.team .ceo img{
+  width: 100%;
+  height: auto;
+}
+  .team {
+    text-align: center;
+  }
+
+  .team .ceo-bio,
+  .team details,
+  .team-boardmembers,
+  .team-advisers-container {
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+
+  .team-boardmembers {
+    grid-template-columns: 1fr;
+  }
+
+  .team-advisers-container {
+    grid-template-columns: 1fr;
+  }
+ .nav{
+  margin-right: 15rem;
+  margin-top: 3rem;
+ }
+ .about-us p{
+  font-size: 1rem;
+  width: 340px;
+ }
+.pre-footer{
+  flex-direction: column;
+}
+
+ .copyright p{
+  margin: 0 auto;
+  font-size: 0.8rem;
+  text-align: center;
+ }
+  footer {
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+@media (max-width: 932px) and (orientation: landscape) {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+ 
+header{
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.header-logo {
+  z-index: 1003;
+}
+ nav {
+  position: fixed;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  min-height: 50vh;
+  background-color: var(--bd-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  }
+
+  nav ul {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  }
+nav ul li a{
+  font-size: 0.5rem;
+}
+  #toggle-menu:checked ~ nav {
+  transform: translateY(0);
+  }
+.call-details{
+  display: none;
+}
+.hamburger {
+  display: flex;  
+}
+.hero-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8rem;
+  color:var(--bd-light);
+ }
+ .hero-wrapper h1{
+  font-size: 1.8rem;
+ }
+ .hero-wrapper p{
+  font-size:0.9rem;
+ }
+  .team-boardmembers,
+  .team-advisers-container {
+    grid-template-columns: 1fr ;
+    margin-left: 1rem;
+  }
+.team-boardmembers figure img{
+  width: 98%;
+}
+.team-advisers-container figure{
+  width: 100%;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+.team-advisers-container figure img{
+  width: 98%;
+}
+  .team .ceo,
+  .team figure,
+  .team .ceo-bio,
+  .team details {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .team .ceo{
+    padding-left: 7rem;
+  }
+  .team .ceo-bio p{
+    margin: 1rem 2rem 1rem 2rem;
+  }
+  .team .ceo-bio blockquote{
+    margin: 1rem 2rem 1rem 2rem;
+  }
+.pre-footer{
+  flex-direction: column;
+ }
+ .nav{
+  margin-left: 12rem;
+  margin-top: 3rem;
+ }
+ .about-us{
+  margin: 2rem;
+ }
+ .about-us p{
+  font-size: 1rem;
+ }
+  .copyright{
+    margin: 0 auto;
+  }
+}
+@media (min-width: 600px) and (max-width: 1366px) and (orientation: portrait) {
+
+ header{
+    padding:2.5rem;
+    width:100%;
+    justify-content: space-between;
+  }
+  .header-logo {
+  z-index: 1003;
+}
+ nav {
+    position: fixed;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    min-height: 50vh;
+    background-color: var(--bd-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  nav ul li{
+    margin-top: 1.5rem;
+  }
+nav ul li a{
+  font-size: 1.5rem;
+}
+  #toggle-menu:checked ~ nav {
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+    
+  }
+.call-details{
+  display: none;
+}
+  .hero {
+    height: 60vh;
+  }
+  .hero-wrapper {
+    padding-top: 15rem;
+    margin-left: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-wrapper h1 {
+    font-size: 4rem;
+  }
+.hero .hero-wrapper p{
+  font-size: 1.8rem;
+}
+.hero .hero-wrapper img{
+  width: 20%;
+}
+  .team .ceo,
+  .team figure,
+  .team .ceo-bio,
+  .team details {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .team-boardmembers,
+  .team-advisers-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-left: 1rem;
+  }
+  .team-boardmembers figure img{
+    width: 98%;
+    height: auto;
+  }
+  .team-advisers-container figure img{
+    width: 100%;
+    height: auto;
+  }
+.team .ceo-bio p{
+  margin: 1rem 2rem 1rem 2rem;
+}
+  .team-boardmembers figure,
+  .team-advisers-container figure {
+    width: 98%;
+
+  }
+.team-advisers-container figure{
+  margin-top: 7rem;
+}
+.about-us{
+  margin: 2rem;
+}
+.nav{
+  margin-right: 38rem;
+  margin-top: 3rem;
+}
+.nav ul li{
+  font-size: 1rem;
+}
+.pre-footer{
+  flex-direction: column;
+}
+  footer {
+    flex-direction: column;
+    padding: 1rem 0;
+    height: auto;
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 600px) and (max-width: 1366px) and (orientation: landscape) {
+   header{
+    padding:2.5rem;
+    width:100%;
+    justify-content: space-between;
+  }
+  .header-logo {
+  z-index: 1003;
+}
+ nav {
+    position: fixed;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    min-height: 50vh;
+    background-color: var(--bd-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 3rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  nav ul li{
+    margin-top: 0.5rem;
+  }
+nav ul li a{
+  font-size: 1.2rem;
+}
+  #toggle-menu:checked ~ nav {
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+    
+  }
+.call-details{
+  display: none;
+}
+  .hero-wrapper{
+    padding-top: 100px;
+  }
+  .team .ceo,
+  .team figure,
+  .team .ceo-bio,
+  .team details {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .team-boardmembers,
+  .team-advisers-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-left: 1rem;
+  }
+  .team-boardmembers figure img{
+    width: 98%;
+    height: auto;
+  }
+  .team-advisers-container figure img{
+    width: 100%;
+    height: auto;
+  }
+.team .ceo-bio p{
+  margin: 1rem 2rem 1rem 2rem;
+}
+.team .ceo-bio blockquote{
+   margin: 1rem 2rem 1rem 2rem;
+}
+  .team-boardmembers figure,
+  .team-advisers-container figure {
+    width: 98%;
+
+  }
+.team-advisers-container figure{
+  margin-top: 7rem;
+}
+.pre-footer{
+  flex-direction: column;
+}
+.nav{
+  margin-right: 43rem;
+  margin-top: 3rem;
+}
+
+  .copyright {
+    margin: 0 auto;
+  }
+
+  footer {
+    padding: 2rem;
+  }
+}
+@media (min-width: 1441px) {
+
+  body {
+    font-size: 1.5rem;
+  }
+
+  header {
+    padding: 2.5rem 6rem;
+  }
+
+  .header-logo h1 {
+    font-size: 2rem;
+  }
+
+  .header-logo img {
+    width: 30%;
+  }
+
+  nav ul {
+    gap: 3rem;
+  }
+
+  /* .hero {
+    height: 85vh;
+    background-size: cover;
+  } */
+
+  .team .ceo,
+  .team figure,
+  .team,
+  .team details {
+    width: 75%;
+    margin-left: 12rem;
+    margin-right: 12rem;
+  }
+   .ceo-bio{
+    width:100%;
+   }
+  .team-boardmembers{
+    grid-template-columns: 1fr 1fr;
+    margin-left: -11rem;
+    gap: 0.2rem;
+  }
+  .team-advisers-container figure{
+    width:75%;
+  }
+ 
+
+  footer {
+    padding: 0 6rem;
+    font-size: 1.1rem;
+  }
+}
+
+
+
