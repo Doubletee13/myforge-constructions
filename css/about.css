@@ -477,6 +477,7 @@ nav ul li{
 .team .ceo img{
   width: 380px;
   height: auto;
+  padding: 0 1rem;
 }
 .team .ceo figcaption{
   width: 380px;
