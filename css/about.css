@@ -448,6 +448,9 @@ nav ul li{
  .hero-wrapper img{
   width: 20%;
  }
+ .about h2{
+  margin-top: 2rem;
+ }
   .about h2,
   .team h2,
   .team-advisers h2 {
@@ -473,6 +476,7 @@ nav ul li{
 .team .ceo{
   width: 510px;
   margin-left: -9rem;
+ 
 }
 .team .ceo img{
   width: 100%;
