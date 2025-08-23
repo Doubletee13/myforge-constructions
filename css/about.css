@@ -472,12 +472,12 @@ nav ul li{
 
 .team .ceo{
   width: 540px;
-  margin-left: -9rem;
+  margin-left: -9.2rem;
 }
 .team .ceo img{
   width: 100%;
   height: auto;
-  
+  margin: 0 auto;
 }
 .team .ceo figcaption{
   width: 380px;
