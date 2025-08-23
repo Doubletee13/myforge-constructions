@@ -471,13 +471,13 @@ nav ul li{
   }
 
 .team .ceo{
-  width: 100%;
+  width: 540px;
   margin-left: -9rem;
 }
 .team .ceo img{
-  width: 380px;
+  width: 100%;
   height: auto;
-  padding: 0 1rem;
+  
 }
 .team .ceo figcaption{
   width: 380px;
