@@ -671,7 +671,9 @@ nav ul li a{
   }
 }
 @media (min-width: 600px) and (max-width: 1366px) and (orientation: portrait) {
-
+  body{
+    background-color: rgb(216, 197, 197);
+  } 
  header{
     padding:2.5rem;
     width:100%;
@@ -722,14 +724,14 @@ nav ul li a{
     height: 60vh;
   }
   .hero-wrapper {
-    padding-top: 15rem;
+    padding-top: 10rem;
     margin-left: 2rem;
     flex-direction: column;
     align-items: center;
   }
 
   .hero-wrapper h1 {
-    font-size: 4rem;
+    font-size: 3.8rem;
   }
 .hero .hero-wrapper p{
   font-size: 1.8rem;
@@ -737,38 +739,47 @@ nav ul li a{
 .hero .hero-wrapper img{
   width: 20%;
 }
-  .team .ceo,
+  
   .team figure,
-  .team .ceo-bio,
-  .team details {
+  .team .ceo-bio{
     width: 100%;
     margin: 0 auto;
   }
-
+.team .ceo{
+  width: 100%;
+  margin-left: -9rem;
+}
+.team details {
+  margin-left: -5rem;
+  width: 100%;
+}
   .team-boardmembers,
   .team-advisers-container {
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-left: 1rem;
+    margin-left: -9rem;
   }
   .team-boardmembers figure img{
-    width: 98%;
+    width: 90%;
     height: auto;
   }
   .team-advisers-container figure img{
-    width: 100%;
+    width: 90%;
     height: auto;
   }
 .team .ceo-bio p{
   margin: 1rem 2rem 1rem 2rem;
 }
-  .team-boardmembers figure,
-  .team-advisers-container figure {
-    width: 98%;
+  .team-boardmembers figure {
+    width: 100%;
 
   }
 .team-advisers-container figure{
   margin-top: 7rem;
+  margin-left: 13rem;
+}
+.team h2{
+  margin-right: 12rem;
 }
 .about-us{
   margin: 2rem;
@@ -791,7 +802,8 @@ nav ul li a{
   }
 }
 @media (min-width: 600px) and (max-width: 1366px) and (orientation: landscape) {
-   header{
+
+  header{
     padding:2.5rem;
     width:100%;
     justify-content: space-between;
@@ -915,31 +927,6 @@ nav ul li a{
     gap: 3rem;
   }
 
-  /* .hero {
-    height: 85vh;
-    background-size: cover;
-  } */
-
-  /* .team .ceo,
-  .team figure,
-  .team,
-  .team details {
-    width: 75%;
-    margin-left: 12rem;
-    margin-right: 12rem;
-  }
-   .ceo-bio{
-    width:100%;
-   }
-  .team-boardmembers{
-    grid-template-columns: 1fr 1fr;
-    margin-left: -11rem;
-    gap: 0.2rem;
-  }
-  .team-advisers-container figure{
-    width:75%;
-  }
-  */
 
   footer {
     padding: 0 6rem;
