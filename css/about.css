@@ -1,177 +1,189 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-:root{
-  --bg-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bd-font-sans-serif:'Open Sans', sans-serif;
-  --bd-light: #F4F6F8;
-  --bd-dark: #3A3F44;
-  --primary: #eb1c24;;
-  --secondary: #FDBE33;
-  --light: #F4F6F8;
-  --dark: #040F28;
-  --gray:#1a1919;
+/* ==================== CSS VARIABLES ==================== */
+:root {
+  --primary-red: #eb1c24;
+  --secondary-yellow: #FDBE33;
+  --dark-bg: #040F28;
+  --light-bg: #F4F6F8;
+  --text-gray: #1a1919;
+  --header-bg: #3A3F44;
+  --font-primary: 'Open Sans', sans-serif;
+  --font-heading: 'Roboto', sans-serif;
 }
-*,*::before,*::after{
-  margin:0;
-  padding:0;
+
+/* ==================== RESET & BASE STYLES ==================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-html{
+
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
 body {
-    margin: 0;
-    font-size: clamp(1rem,2.2vh,1.5rem);
-    font-weight: 400;
-    line-height: 1.5;
-    font-family: var(--bd-font-sans-serif);
-    background-color: whitesmoke;
+  font-size: clamp(1rem, 2.2vh, 1.5rem);
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: var(--font-primary);
+  background-color: whitesmoke;
 }
-img{
+
+img {
   display: block;
-  overflow-clip-margin: content-box;
-  overflow: clip;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-header {
+
+/* ==================== HEADER STYLES ==================== */
+.header {
   height: 50px;
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
   align-items: center;
-  padding: 2rem; 
-  background-color: var(--bd-dark);
+  padding: 2rem;
+  background-color: var(--dark-bg);
   box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.4);
   position: fixed;
-  top:0;
-  width:100%;
-  z-index: 1002; 
+  top: 0;
+  width: 100%;
+  z-index: 1002;
 }
-.header-homepage-button{
+
+.header__logo-link {
   text-decoration: none;
 }
-.header-logo{
-  display:flex;
-  flex-wrap:nowrap;
+
+.header__logo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   white-space: nowrap;
-  gap:0.5rem;
-  align-items:center;
-   
 }
-.header-homepage-button .header-logo h1{
-  font-family: "Roboto", sans-serif;
-  font-weight:700;
+
+.header__logo-img {
+  width: 45px;
+  height: 45px;
+}
+
+.header__logo-text {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 1.4rem;
-  color:#fff;
+  color: #fff;
 }
-.header-homepage-button.header-logo img{
-  width:15%;
-  height:auto;
-}
-nav ul{
-  display:flex;
-  gap:2rem;
+
+.header__nav-list {
+  display: flex;
+  gap: 2rem;
   list-style: none;
 }
-nav ul li a{
-  text-decoration:none;
-  color:#fff;
+
+.header__nav-link {
+  text-decoration: none;
+  color: #fff;
   font-size: 1rem;
+  transition: color 0.2s;
 }
-nav ul li a:hover{
-  color:var(--primary);
-  transition: background 0.2s;
+
+.header__nav-link:hover,
+.header__nav-link:active {
+  color: var(--primary-red);
 }
-nav ul li a:active{
-  color:var(--primary);
-}
-.call-details{
+
+.header__contact {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 0.5rem;
 }
-.call-details p{
+
+.header__contact-icon {
+  width: 19px;
+  height: 19px;
+}
+
+.header__contact-number {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--primary-red);
 }
-.hamburger {
+
+.header__hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
   padding: 10px;
-  z-index: 1001;
+  z-index: 1003;
 }
-.hamburger span {
+
+.header__hamburger-line {
   width: 25px;
   height: 3px;
   background: white;
   transition: 0.3s ease;
 }
 
-/* Hide the checkbox */
-#toggle-menu {
+.header__menu-toggle {
   display: none;
 }
-main{
-  margin-top:50px;
+
+/* ==================== MAIN CONTENT ==================== */
+.main {
+  margin-top: 50px;
 }
-.hero{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../images/construction3.jpg);
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/construction3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height:70vh;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
- .hero-wrapper{
+
+.hero__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 170px;
-  color:var(--bd-light);
- }
- .hero-wrapper h1{
-  font-size: 5rem;
-  font-weight: 900;
-  animation-delay: 0.4s;
- }
- .hero-wrapper img{
-  animation-delay: 0.4s;
-   width: 10%;
+  color: var(--light-bg);
+  text-align: center;
+}
+
+.hero__logo {
+  width: 200px;
   height: auto;
-  
- }
- .hero-wrapper p{
-  animation-delay: 0.4s;
-  font-size:2rem;
- }
- Add animation to inner elements with staggered delays */
-.hero-wrapper img {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 3s ease-out forwards;
   animation-delay: 0.2s;
- 
 }
 
-.hero-wrapper h1 {
+.hero__title {
+  font-size: 5rem;
+  font-weight: 900;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 3s ease-out forwards;
   animation-delay: 0.4s;
 }
 
-.hero-wrapper p {
+.hero__subtitle {
+  font-size: 2rem;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 3s ease-out forwards;
   animation-delay: 0.6s;
 }
 
-
-/* Animation Keyframes */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -181,758 +193,356 @@ main{
     opacity: 1;
     transform: translateY(0);
   }
-} 
-.about{
+}
+
+/* ==================== SECTION STYLES ==================== */
+.section {
+  padding: 3rem 2rem;
   text-align: center;
-  margin-bottom: 1rem;
 }
-.about h2{
-  font-size: 3rem;
-}
-.about p{
-  font-weight: 700;
-  color: var(--gray);
-}
-.team details:hover{
- cursor: pointer;
-}
-.team h2{
-  text-align: center;
-  font-size:3rem ;
-  margin-top: 2rem;
+
+.section__title {
+  font-size: 3.5rem;
+  font-weight: 600;
   margin-bottom: 2rem;
 }
-.team .ceo-bio{
-  margin-right: 15rem;
-  margin-top: 1rem;
-  color: var(--gray);
+
+.section__description {
+  font-weight: 700;
+  color: var(--text-gray);
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
-.team .ceo-bio p{
+
+/* ==================== TEXT HIGHLIGHT ==================== */
+.text-highlight {
+  color: var(--primary-red);
+  font-weight: normal;
+}
+
+/* ==================== CEO PROFILE ==================== */
+.ceo-profile {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.ceo-profile__figure {
+  margin-bottom: 2rem;
+}
+
+.ceo-profile__image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ceo-profile__caption {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.ceo-profile__details {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.ceo-profile__summary {
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ceo-profile__summary:hover {
+  background-color: #e8eaec;
+}
+
+.ceo-profile__bio {
   margin-top: 1.5rem;
+  color: var(--text-gray);
+  text-align: left;
+}
+
+.ceo-profile__bio p {
+  margin-bottom: 1.5rem;
   line-height: 1.7;
 }
-.team .ceo-bio blockquote{
-  margin-top: 1.5rem;
-}
-.team .ceo{
-  width: 100%;
-  padding-left: 10rem;
-}
-.team .ceo img{
-  width: 80%;
-  height: auto;
-}
-.team figure{
-  width:28%;
-}
-.team figure img{
-  width: 100%;
-  height: auto;
-}
-.team .second-board-member{
-  height: 69%;
-}
-.team .orange-text{
-  color:var(--primary);
-  font-weight: normal;
-}
-.team details{
-  margin-left: 10rem;
-}
-.team-boardmembers{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  margin-left: 10rem;
-}
-.team-boardmembers figure{
-  width:55%;
-}
-.team-boardmembers figure img{
-  width:100%;
-  height: auto;
-}
-.team-boardmembers figure figcaption{
-  font-weight: 600;
-}
-.team-boardmembers .board-member-adjust{
-  height:69%;
-}
-.team-advisers{
-  margin-top: 10rem;
-}
-.team-advisers h2{
-  text-align: center;
-  font-size:3rem ;
+
+.ceo-profile__quote {
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--light-bg);
+  border-left: 4px solid var(--primary-red);
+  font-style: italic;
 }
-.team-advisers-container{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  margin-left: 10rem;
+
+/* ==================== TEAM GRID ==================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 3rem auto;
+  padding: 0 2rem;
 }
-.team-advisers-container figure{
-  width:55%;
+
+.team-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-.team-advisers-container figure img{
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card__image-wrapper {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f0f0f0;
 }
-.team-advisers-container figcaption{
+
+.team-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+}
+
+.team-card__content {
+  padding: 2rem;
+  text-align: left;
+}
+
+.team-card__name {
+  font-size: 1.8rem;
   font-weight: 600;
-}
-.team-advisers-container p{
-  color:var(--gray);
-  font-weight: normal;
-}
-.team-advisers-container .orange-text{
-  color: var(--primary);
-  font-weight: normal;
+  margin-bottom: 0.5rem;
+  color: var(--dark-bg);
 }
 
+.team-card__title {
+  font-size: 1.1rem;
+  color: var(--primary-red);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
+.team-card__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-gray);
+}
 
- .team .ceo,
-  .team figure,
-  .team,
-  .team details {
-    width: 75%;
-    margin-left: 12rem;
-    margin-right: 12rem;
-  }
-   .ceo-bio{
-    width:100%;
-   }
-  .team-boardmembers{
-    grid-template-columns: 1fr 1fr;
-    margin-left: -11rem;
-    gap: 0.2rem;
-  }
-  .team-advisers-container figure{
-    width:75%;
-  }
- 
-
-
-.straight-line{
+/* ==================== DIVIDER ==================== */
+.divider {
   width: 50%;
-  margin: 0 auto;
-  background-color: rgb(233, 226, 226);
-  margin-bottom: 10rem;
-  margin-top: 10rem;
+  margin: 5rem auto;
+  border: none;
+  border-top: 2px solid #e9e2e2;
 }
-.icons{
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background-color: var(--dark-bg);
+  padding: 3rem 2rem 0;
+}
+
+.footer__content {
   display: flex;
-  gap: 2rem;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+  gap: 4rem;
+}
+
+.footer__about-title,
+.footer__nav-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.footer__about-text {
+  font-size: 1.2rem;
+  color: var(--light-bg);
+  line-height: 1.8;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
-.about-us h4{
-  margin-bottom: 1.5rem;
+
+.footer__social-icon {
+  width: 24px;
+  height: 24px;
 }
-.about-us p{
-  font-size: 1rem;
-  font-size: 1.2rem;
-  color: var(--gray);
+
+.footer__nav-list {
+  list-style: none;
 }
-.nav h4{
+
+.footer__nav-item {
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: var(--gray);
 }
-.nav ul {
-  list-style-type: none;
-}
-.nav ul li{
-  margin-top: 1rem;
-}
-.nav ul li a{
+
+.footer__nav-link {
   text-decoration: none;
-  color:var(--gray);
-  
-}
-.nav ul li a:hover{
-  color:var(--primary);
+  color: var(--light-bg);
+  font-size: 1.1rem;
+  transition: color 0.2s;
 }
 
-.pre-footer{
-  display:flex;
-  align-items: center;
-  margin: 0 auto;
-  justify-content: space-evenly;
-  margin-bottom: 7rem;
-}
-.footer-red-text{
-  color:var(--primary)
+.footer__nav-link:hover {
+  color: var(--primary-red);
 }
 
-
-.copyright{
-  margin: 0 auto;
+.footer__copyright {
+  background-color: var(--dark-bg);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--light-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-footer{
-  background-color: var(--bd-dark);
-  height:50px;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--bd-light);
-  margin-top: 3rem;
+.footer__copyright-text {
+  margin: 0;
 }
 
+.footer__copyright-highlight {
+  color: var(--primary-red);
+}
 
+/* ==================== RESPONSIVE DESIGN ==================== */
 
-@media (max-width: 480px) {
- header{
-    padding:2.5rem;
-    width:100%;
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 2.5rem;
     justify-content: space-between;
   }
-  .header-logo {
-  z-index: 1003;
-}
- nav {
+
+  .header__logo {
+    z-index: 1003;
+  }
+
+  .header__nav {
     position: fixed;
     top: 5px;
     left: 0;
     width: 100%;
     height: 50vh;
-    background-color: var(--bd-dark);
+    background-color: var(--dark-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
-    padding: 3rem;
   }
 
-  nav ul {
+  .header__nav-list {
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
+    gap: 1.5rem;
   }
-nav ul li{
-  margin-top: 0.7rem;
-}
-  #toggle-menu:checked ~ nav {
+
+  .header__menu-toggle:checked ~ .header__nav {
     transform: translateY(0);
   }
-.call-details{
-  display: none;
-}
-  .hamburger {
+
+  .header__contact {
+    display: none;
+  }
+
+  .header__hamburger {
     display: flex;
-    
   }
 
   .hero {
     height: 50vh;
   }
-.hero-wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 150px;
-  color:var(--bd-light);
- }
- .hero-wrapper h1{
-  font-size: 1.5rem;
- }
- .hero-wrapper p{
-  font-size:0.9rem;
- }
- .hero-wrapper img{
-  width: 20%;
- }
- .about h2{
-  margin-top: 2rem;
- }
-  .about h2,
-  .team h2,
-  .team-advisers h2 {
+
+  .hero__logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero__title {
     font-size: 2rem;
   }
 
-  .about p {
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .section__title {
+    font-size: 2rem;
+  }
+
+  .section__description {
     padding: 0 1rem;
   }
 
-  .team .ceo,
-  .team figure,
-  .team .ceo-bio,
-  .team details,
-  .team-boardmembers,
-  .team-boardmembers figure,
-  .team-advisers-container,
-  .team-advisers-container figure {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-.team .ceo{
-  width: 510px;
-  margin-left: -9rem;
- 
-}
-.team .ceo img{
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-}
-.team .ceo figcaption{
-  width: 380px;
-}
-  .team {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .team .ceo-bio,
-  .team details,
-  .team-boardmembers,
-  .team-advisers-container {
-    margin-left: 0;
+  .ceo-profile {
     padding: 0 1rem;
   }
 
-  .team-boardmembers {
-    grid-template-columns: 1fr;
+  .ceo-profile__image {
+    max-width: 100%;
   }
 
-  .team-advisers-container {
-    grid-template-columns: 1fr;
-   
-  }
- .nav{
-  margin-right: 15rem;
-  margin-top: 3rem;
- }
- .about-us p{
-  font-size: 1rem;
-  width: 340px;
- }
-.pre-footer{
-  flex-direction: column;
-}
-
- .copyright p{
-  margin: 0 auto;
-  font-size: 0.8rem;
-  text-align: center;
- }
-  footer {
-    height: auto;
-    padding: 1rem;
-    text-align: center;
-  }
-}
-@media (max-width: 932px) and (orientation: landscape) {
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-body {
-  overflow-x: hidden;
-}
- 
-header{
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
-}
-.header-logo {
-  z-index: 1003;
-}
- nav {
-  position: fixed;
-  top: 5px;
-  left: 0;
-  width: 100%;
-  min-height: 50vh;
-  background-color: var(--bd-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000;
-  }
-
-  nav ul {
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-align: center;
-  }
-nav ul li a{
-  font-size: 0.5rem;
-}
-  #toggle-menu:checked ~ nav {
-  transform: translateY(0);
-  }
-.call-details{
-  display: none;
-}
-.hamburger {
-  display: flex;  
-}
-.hero-wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 8rem;
-  color:var(--bd-light);
- }
- .hero-wrapper h1{
-  font-size: 1.8rem;
- }
- .hero-wrapper p{
-  font-size:0.9rem;
- }
-  .team-boardmembers,
-  .team-advisers-container {
-    grid-template-columns: 1fr ;
-    margin-left: 1rem;
-  }
-.team-boardmembers figure img{
-  width: 98%;
-}
-.team-advisers-container figure{
-  width: 100%;
-  margin-right: 1rem;
-  margin-top: 2rem;
-}
-.team-boardmembers figure{
-  width: 100%;
-}
-
-
-.team .ceo{
-  width: 100%;
-}
-.team details summary{
-  margin: 2rem 0rem 0rem 2rem ;
-}
-.team .ceo img{
-  width: 100%;
-  height: auto;
-  margin-left: -3rem;
-}
-.team .ceo figcaption{
-  width: 380px;
-}
-  .team {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-
-
-.team-advisers-container figure img{
-  width: 98%;
-}
-  .team .ceo,
-  .team figure,
-  .team .ceo-bio,
-  .team details {
-    width: 100%;
-    margin: 0 auto;
-  }
-  .team .ceo{
-    padding-left: 7rem;
-  }
-  .team .ceo-bio p{
-    margin: 1rem 2rem 1rem 2rem;
-  }
-  .team .ceo-bio blockquote{
-    margin: 1rem 2rem 1rem 2rem;
-  }
-.pre-footer{
-  flex-direction: column;
- }
- .nav{
-  margin-left: 12rem;
-  margin-top: 3rem;
- }
- .about-us{
-  margin: 2rem;
- }
- .about-us p{
-  font-size: 1rem;
- }
-  .copyright{
-    margin: 0 auto;
-  }
-}
-@media (min-width: 600px) and (max-width: 1366px) and (orientation: portrait) {
-  body{
-    background-color: rgb(216, 197, 197);
-  } 
- header{
-    padding:2.5rem;
-    width:100%;
-    justify-content: space-between;
-  }
-  .header-logo {
-  z-index: 1003;
-}
- nav {
-    position: fixed;
-    top: 5px;
-    left: 0;
-    width: 100%;
-    min-height: 50vh;
-    background-color: var(--bd-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  nav ul li{
-    margin-top: 1.5rem;
-  }
-nav ul li a{
-  font-size: 1.5rem;
-}
-  #toggle-menu:checked ~ nav {
-    transform: translateY(0);
-  }
-
-  .hamburger {
-    display: flex;
-    
-  }
-.call-details{
-  display: none;
-}
-  .hero {
-    height: 60vh;
-  }
-  .hero-wrapper {
-    padding-top: 10rem;
-    margin-left: 2rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-wrapper h1 {
-    font-size: 3.8rem;
-  }
-.hero .hero-wrapper p{
-  font-size: 1.8rem;
-}
-.hero .hero-wrapper img{
-  width: 20%;
-}
-  
-  .team figure,
-  .team .ceo-bio{
-    width: 100%;
-    margin: 0 auto;
-  }
-.team .ceo{
-  width: 100%;
-  margin-left: -9rem;
-}
-.team details {
-  margin-left: -5rem;
-  width: 100%;
-}
-  .team-boardmembers,
-  .team-advisers-container {
+  .team-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin-left: -9rem;
+    padding: 0 1rem;
   }
-  .team-boardmembers figure img{
-    width: 90%;
-    height: auto;
-  }
-  .team-advisers-container figure img{
-    width: 90%;
-    height: auto;
-  }
-.team .ceo-bio p{
-  margin: 1rem 2rem 1rem 2rem;
-}
-  .team-boardmembers figure {
-    width: 100%;
 
-  }
-.team-advisers-container figure{
-  margin-top: 7rem;
-  margin-left: 13rem;
-}
-.team h2{
-  margin-right: 12rem;
-}
-.about-us{
-  margin: 2rem;
-}
-.nav{
-  margin-right: 38rem;
-  margin-top: 3rem;
-}
-.nav ul li{
-  font-size: 1rem;
-}
-.pre-footer{
-  flex-direction: column;
-}
-  footer {
+  .footer__content {
     flex-direction: column;
-    padding: 1rem 0;
-    height: auto;
-    gap: 0.5rem;
-  }
-}
-@media (min-width: 600px) and (max-width: 1366px) and (orientation: landscape) {
-
-  header{
-    padding:2.5rem;
-    width:100%;
-    justify-content: space-between;
-  }
-  .header-logo {
-  z-index: 1003;
-}
- nav {
-    position: fixed;
-    top: 5px;
-    left: 0;
-    width: 100%;
-    min-height: 50vh;
-    background-color: var(--bd-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-    padding: 3rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  nav ul li{
-    margin-top: 0.5rem;
-  }
-nav ul li a{
-  font-size: 1.2rem;
-}
-  #toggle-menu:checked ~ nav {
-    transform: translateY(0);
-  }
-
-  .hamburger {
-    display: flex;
-    
-  }
-.call-details{
-  display: none;
-}
-  .hero-wrapper{
-    padding-top: 100px;
-  }
-  .team .ceo,
-  .team figure,
-  .team .ceo-bio,
-  .team details {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .team-boardmembers,
-  .team-advisers-container {
-    grid-template-columns: 1fr;
     gap: 2rem;
-    margin-left: 1rem;
-  }
-  .team-boardmembers figure img{
-    width: 98%;
-    height: auto;
-  }
-  .team-advisers-container figure img{
-    width: 100%;
-    height: auto;
-  }
-.team .ceo-bio p{
-  margin: 1rem 2rem 1rem 2rem;
-}
-.team .ceo-bio blockquote{
-   margin: 1rem 2rem 1rem 2rem;
-}
-  .team-boardmembers figure,
-  .team-advisers-container figure {
-    width: 98%;
-
-  }
-.team-advisers-container figure{
-  margin-top: 7rem;
-}
-.pre-footer{
-  flex-direction: column;
-}
-.nav{
-  margin-right: 43rem;
-  margin-top: 3rem;
-}
-
-  .copyright {
-    margin: 0 auto;
   }
 
-  footer {
-    padding: 2rem;
+  .footer__about-text {
+    font-size: 1rem;
   }
 }
-@media (min-width: 1441px) {
 
-  body {
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .team-grid {
+    gap: 2rem;
+  }
+
+  .hero__title {
+    font-size: 3.5rem;
+  }
+
+  .hero__subtitle {
     font-size: 1.5rem;
   }
+}
 
-  header {
+/* Large Screens (1441px+) */
+@media (min-width: 1441px) {
+  .header {
     padding: 2.5rem 6rem;
   }
 
-  .header-logo h1 {
-    font-size: 2rem;
-  }
-
-  .header-logo img {
-    width: 30%;
-  }
-
-  nav ul {
-    gap: 3rem;
-  }
-
-
-  footer {
-    padding: 0 6rem;
-    font-size: 1.1rem;
+  .team-grid {
+    gap: 4rem;
+    padding: 0 4rem;
   }
 }
-
-
-
