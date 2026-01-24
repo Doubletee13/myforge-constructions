@@ -456,6 +456,10 @@ main {
     font-size: 1.8rem;
   }
 
+  .contact_email{
+   font-size: 0.95rem;
+  }
+
   .footer {
     padding: 2rem 1rem 0;
   }
@@ -594,7 +598,9 @@ main {
   .hamburger {
     display: flex;
   }
-
+.contact_email{
+  font-size: 1.5rem;
+}
   .contact {
     flex-direction: column;
     margin-left: 0;
